@@ -57,6 +57,7 @@ class CPBaseController: NSObject, CPInterfaceControllerDelegate, CPMapTemplateDe
     func dashboardController(_ dashboardController: CPDashboardController, didConnectWith window: UIWindow) {
         print("Connected to CarPlay dashboard window.")
         
+<<<<<<< Updated upstream
         dashboardcontroller = dashboardController
         
         let aButton = CPDashboardButton(
@@ -69,6 +70,25 @@ class CPBaseController: NSObject, CPInterfaceControllerDelegate, CPMapTemplateDe
             subtitleVariants: ["GO TO LEFT"],
             image: "◀️".image() ?? UIImage())
         dashboardController.shortcutButtons = [aButton, bButton]
+=======
+//        let aButton = CPDashboardButton(
+//            titleVariants: ["Hart"],
+//            subtitleVariants: ["Broken hart"],
+//            image: "💔".image() ?? UIImage()) { (button) in
+//                print("Button Beaches pressed!")
+//            }
+        
+        let bButton = CPDashboardButton(
+            titleVariants: ["Correct"],
+            subtitleVariants: ["Correct emoji"],
+            image:"✅".image() ?? UIImage()) { (button) in
+                print("Button Parks pressed!")
+            }
+
+        window.rootViewController = mapViewController
+        
+        dashboardController.shortcutButtons = [bButton]
+>>>>>>> Stashed changes
     }
 
     func dashboardController(_ dashboardController: CPDashboardController, didDisconnectWith window: UIWindow) {
